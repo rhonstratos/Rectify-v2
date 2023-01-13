@@ -39,13 +39,13 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware(['web'])
                 ->namespace($this->namespace)
                 ->prefix('business')
-                ->as('r_business')
+                ->as('r_business.')
                 ->group(base_path('routes/business.php'));
 
             Route::middleware(['web'])
                 ->namespace($this->namespace)
                 ->prefix('client')
-                ->as('r_client')
+                ->as('r_client.')
                 ->group(base_path('routes/client.php'));
         });
     }
