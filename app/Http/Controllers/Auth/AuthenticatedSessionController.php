@@ -43,6 +43,8 @@ class AuthenticatedSessionController extends Controller
         if ($user->type == $types['ADMIN']) {
             return redirect()->url('/dashboard');
         }
+
+        return $this->destroy($request);
     }
 
     /**
