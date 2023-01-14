@@ -9,7 +9,7 @@
 	<x-include.heads />
 </head>
 
-<body>
+<body class="bg-purple-900 text-white">
 	<div id="navbar_header">
 		<x-client.navbar />
 	</div>
