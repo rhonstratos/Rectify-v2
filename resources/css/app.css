@@ -1,28 +1,3 @@
-@import "fonts.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-}
-@layer components {
-    .client-nav{
-        @apply h-6 w-11 rounded-full bg-gray-200
-        after:absolute
-        after:top-[2px]
-        after:left-[2px]
-        after:h-5
-        after:w-5
-        after:rounded-full
-        after:border
-        after:border-gray-300
-        after:bg-white
-        after:transition-all
-        peer-checked:bg-blue-600
-        peer-checked:after:translate-x-full
-        dark:border-gray-600
-        dark:bg-gray-700;
-    }
-}
-@layer utilities {
-}

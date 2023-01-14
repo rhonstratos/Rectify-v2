@@ -1,4 +1,4 @@
 @livewireScripts
 @vite([
-    'resources/js/app.js',
+    'resources/js/app.js'
 ])
