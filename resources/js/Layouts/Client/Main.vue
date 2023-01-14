@@ -1,5 +1,7 @@
 <template>
-    <Navbar />
+    <div class="z-10 sticky">
+        <Navbar />
+    </div>
     <main>
         <slot />
     </main>
