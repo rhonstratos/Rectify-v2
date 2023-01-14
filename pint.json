@@ -1,0 +1,21 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "resources",
+        "app/Console",
+        "app/Exceptions",
+        "app/Providers",
+        "tests",
+        "lang",
+        "database",
+        "config",
+        "public",
+        "bootstrap"
+    ],
+    "notName": [
+        "*-my-file.php"
+    ],
+    "notPath": [
+        "path/to/excluded-file.php"
+    ]
+}
