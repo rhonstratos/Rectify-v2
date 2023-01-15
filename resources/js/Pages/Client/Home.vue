@@ -2,7 +2,16 @@
     <ClientLayout>
 
         <Head title="test 123 asdzxc"></Head>
-        <div class="grid h-screen">
+        <div class="grid h-screen relative">
+            <img src="@ast/Client/Home/pexels-skitterphoto-1448561.jpg" alt="image" class="
+            home-hero-heading-bg
+            lg:flex
+            hidden
+            ">
+            <img src="@ast/Client/Home/pexels-sergei-starostin-6477216.jpg" alt="image" class="
+            home-hero-heading-bg
+            lg:hidden
+            ">
             <div class="text-center mt-20
             lg:px-[6rem]
             md:px-[3rem]
@@ -64,7 +73,7 @@
     </ClientLayout>
 </template>
 
-<script>
+<script >
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import ClientLayout from '@/Layouts/Client/Main.vue';
 
