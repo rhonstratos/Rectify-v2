@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return redirect()->back();
     }
 
     /**
@@ -39,7 +39,7 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect()->back();
     }
 
     /**
@@ -50,7 +50,7 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        return redirect()->back();
     }
 
     /**
@@ -61,7 +61,7 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        return redirect()->back();
     }
 
     /**
@@ -73,7 +73,7 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return redirect()->back();
     }
 
     /**
@@ -84,6 +84,6 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return redirect()->back();
     }
 }
