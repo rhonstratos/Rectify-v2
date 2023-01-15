@@ -1,18 +1,15 @@
 <template>
-    <nav class="grid p-5">
+    <nav class="grid p-5 bg-white">
         <div class="self-center">
             <div class="flex flex-wrap items-center justify-between p-1">
-
                 <div class="flex flex-shrink-0 items-center">
-                    <div class="2xl:w-[150px] w-[130px] cursor-pointer" onclick="location.href='/client/home'">
+                    <div class="2xl:w-[150px] w-[130px] cursor-pointer"
+                        onclick="location.href=route('r_client.home.index')">
                         <img src="@ast/rectify-dark-blue.png" alt="image">
                     </div>
                 </div>
-                <div class="lg:hidden flex flex-wrap items-center">
-                    <button onclick="
-                        $('#nav_items').toggleClass('-top-[240px]');
-                        $('#nav_items').toggleClass('top-[95px]');
-                        "
+                <div v-if="trueLinks.length > 0" class="lg:hidden flex flex-wrap items-center">
+                    <button @click="drawerShow = !drawerShow" type="button"
                         class="transition-all flex items-center px-3 py-2 border border-white rounded text-black hover:text-primary-400 hover:border-primary-400">
                         <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Menu</title>
@@ -35,14 +32,22 @@
                     lg:p-1
                     lg:z-auto z-[-1]
                     transition-all duration-500 ease-in-out
-                    -top-[240px]
-                    ">
-                    <a v-for="link in links" :href=link.url class="
-                    transition-all duration-150 ease-in-out
-                    lg:text-xl
-                    lg:hover:text-2xl
-                    lg:hover:text-primary-600
-                    hover:text-3xl">
+                    -top-[500px]
+                    " :class="{
+                        'top-[94px]': drawerShow == true,
+                        '-top-[500px]': drawerShow == false
+                    }">
+                    <a v-for="link in trueLinks" :href="route(link.url)" class="
+                        transition-all duration-150 ease-in-out
+                        text-primary-50
+                        hover:text-white
+                        lg:text-xl
+                        lg:hover:text-2xl
+                        lg:hover:text-primary-600
+                        hover:text-3xl" :class="{
+                            'lg:text-primary-600 text-primary-300': route().current(link.url),
+                            'lg:text-primary-400 text-primary-100': !route().current(link.url),
+                        }">
                         {{ link.content }}
                     </a>
                 </div>
@@ -50,18 +55,25 @@
         </div>
     </nav>
 </template>
-
+<!-- https://github.com/tighten/ziggy#the-router-class -->
 <script>
 export default {
+    name: 'Navbar',
     data() {
         return {
+            drawerShow: false,
             links: [
-                { url: route('r_client.home.index'), content: 'test' },
-                { url: route('r_client.home.create'), content: 'create' },
-                { url: route('r_client.home.index'), content: 'test' },
-                { url: route('r_client.home.create'), content: 'create' },
-                { url: route('r_client.home.index'), content: 'test' },
+                { url: 'r_client.home.index', content: 'test' },
+                { url: 'r_client.home.create', content: 'create' },
+                { url: 'r_client.home.create', content: 'create' },
+                { url: 'r_client.home.create', content: 'create' },
+                { url: 'r_client.home.create', content: 'create' },
             ]
+        }
+    },
+    computed: {
+        trueLinks: function () {
+            return this.links.filter(function (i) { return route().has(i.url) })
         }
     }
 }

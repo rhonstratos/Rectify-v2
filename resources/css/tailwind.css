@@ -3,3 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+}
+@layer components {
+    .prime-btn{
+        @apply rounded-xl text-xl p-3 transition-colors duration-200 ease-in-out
+    }
+}
+@layer utilities {
+}

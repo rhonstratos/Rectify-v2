@@ -6,12 +6,15 @@ const path = require('path')
 export default defineConfig({
     resolve: {
         alias: {
-            '@ast':path.resolve(__dirname,'./resources/assets/img')
+            '@ast': path.resolve(__dirname, './resources/assets/img')
         },
     },
     plugins: [
         laravel({
             input: [
+                'node_modules/@fortawesome/fontawesome-free/js/brands.js',
+                'node_modules/@fortawesome/fontawesome-free/js/solid.js',
+                'node_modules/@fortawesome/fontawesome-free/js/fontawsome.js',
                 'resources/js/app.js',
                 'resources/css/app.css',
                 'resources/css/tailwind.css',

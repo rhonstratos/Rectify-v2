@@ -1,5 +1,5 @@
 <template>
-    <div class="z-10 sticky">
+    <div class="z-10 sticky top-0">
         <Navbar />
     </div>
     <main>
@@ -7,6 +7,5 @@
     </main>
 </template>
 <script setup>
-import { Link } from '@inertiajs/inertia-vue3';
 import Navbar from '@/Layouts/Client/partials/Navbar.vue'
 </script>
