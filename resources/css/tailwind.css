@@ -7,22 +7,28 @@
     html {
         @apply duration-500 ease-in-out;
     }
-    main{
-        @apply dark:bg-gray-800 dark:text-white;
+    * {
+        @apply leading-tight;
     }
 }
 @layer components {
     .prime-btn {
-        @apply rounded-xl text-xl p-3 transition-colors duration-200 ease-in-out;
+        @apply rounded-xl xl:text-xl lg:text-xl md:text-lg md:p-3 p-2 transition-colors duration-200 ease-in-out;
     }
     .home-hero-heading-bg {
-        @apply absolute top-0 left-0 w-full h-screen -z-[1] opacity-[0.15];
+        @apply absolute top-0 left-0 w-full lg:h-screen h-auto -z-[1] opacity-[0.15];
     }
-    .section{
-        @apply grid h-screen dark:bg-gray-800 dark:text-white;
+    .section {
+        @apply grid xl:h-screen lg:h-screen h-auto w-full p-0 m-0 place-items-center dark:bg-gray-800 dark:text-white;
     }
-    .max-w-content{
+    .section-child {
+        @apply max-w-content text-center xl:px-[6rem] md:px-[3rem] p-8 xl:mx-60 md:mx-32 m-4 rounded-lg;
+    }
+    .max-w-content {
         @apply max-w-6xl mx-auto;
+    }
+    .header-leading {
+        @apply xl:leading-[4rem] lg:leading-[3rem] md:leading-7 leading-5;
     }
 }
 @layer utilities {

@@ -1,5 +1,5 @@
 <template>
-    <nav class="grid p-5 bg-white drop-shadow-md">
+    <nav class="grid p-5 bg-white drop-shadow-md w-full">
         <div class="self-center">
             <div class="flex flex-wrap items-center justify-between p-1">
                 <div class="flex flex-shrink-0 items-center">
@@ -8,9 +8,18 @@
                         <img src="@ast/rectify-dark-blue.png" alt="image">
                     </div>
                 </div>
-                <div v-if="trueLinks.length > 0" class="lg:hidden flex flex-wrap items-center">
+                <div v-if="trueLinks.length > 0" class="
+                lg:hidden flex flex-wrap items-center
+                ">
                     <button @click="drawerShow = !drawerShow" type="button"
-                        class="transition-all flex items-center px-3 py-2 border border-white rounded text-black hover:text-primary-400 hover:border-primary-400">
+                        class="
+                        transition-all flex items-center
+                        px-3 py-2
+                        border border-white
+                        rounded
+                        text-black
+                        hover:text-primary-400
+                        hover:border-primary-400">
                         <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <title>Menu</title>
                             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -25,12 +34,16 @@
                     bg-primary-600
                     xl:text-3xl
                     lg:text-xl
+                    md:text-lg
                     lg:text-primary-400
                     lg:bg-white
-                    lg:flex lg:static lg:justify-end
+                    lg:flex
+                    lg:static
+                    lg:justify-end
                     lg:w-fit w-full
                     lg:p-1
-                    lg:z-auto z-[-1]
+                    lg:z-auto
+                    z-[-1]
                     transition-all duration-500 ease-in-out
                     -top-[500px]
                     " :class="{
