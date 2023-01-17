@@ -1,5 +1,5 @@
 <template>
-    <nav class="grid p-5 bg-white">
+    <nav class="grid p-5 bg-white drop-shadow-md">
         <div class="self-center">
             <div class="flex flex-wrap items-center justify-between p-1">
                 <div class="flex flex-shrink-0 items-center">
@@ -38,15 +38,19 @@
                         '-top-[500px]': drawerShow == false
                     }">
                     <a v-for="link in trueLinks" :href="route(link.url)" class="
-                        transition-all duration-150 ease-in-out
+                        transition-all duration-150
+                        font-semibold
                         text-primary-50
                         hover:text-white
+                        hover:translate-x-1
                         lg:text-xl
-                        lg:hover:text-2xl
-                        lg:hover:text-primary-600
-                        hover:text-3xl" :class="{
-                            'lg:text-primary-600 text-primary-300': route().current(link.url),
-                            'lg:text-primary-400 text-primary-100': !route().current(link.url),
+                        lg:hover:text-xl
+                        lg:hover:-translate-y-1
+                        lg:hover:translate-x-0
+                        lg:hover:text-primary-700
+                        " :class="{
+                            'lg:text-primary-700 text-primary-300': route().current(link.url),
+                            'lg:text-primary-500': !route().current(link.url),
                         }">
                         {{ link.content }}
                     </a>
@@ -63,11 +67,11 @@ export default {
         return {
             drawerShow: false,
             links: [
-                { url: 'r_client.home.index', content: 'test' },
-                { url: 'r_client.home.create', content: 'create' },
-                { url: 'r_client.home.create', content: 'create' },
-                { url: 'r_client.home.create', content: 'create' },
-                { url: 'r_client.home.create', content: 'create' },
+                { url: 'r_client.home.index', content: 'Home' },
+                { url: 'r_client.home.create', content: 'Products' },
+                { url: 'r_client.home.create', content: 'Orders' },
+                { url: 'r_client.home.create', content: 'Appointments' },
+                { url: 'r_client.home.create', content: 'Messages' },
             ]
         }
     },

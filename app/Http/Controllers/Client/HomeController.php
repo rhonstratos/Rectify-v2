@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function index(): Response
     {
-        return Inertia::render('Client/Home', [
+        return Inertia::render('Client/Home/Index', [
             'status' => session('status'),
         ]);
     }

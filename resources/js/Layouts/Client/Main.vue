@@ -2,7 +2,7 @@
     <div class="z-10 sticky top-0">
         <Navbar />
     </div>
-    <main>
+    <main >
         <slot />
     </main>
 </template>

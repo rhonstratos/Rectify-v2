@@ -4,6 +4,12 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        @apply duration-500 ease-in-out;
+    }
+    main{
+        @apply dark:bg-gray-800 dark:text-white;
+    }
 }
 @layer components {
     .prime-btn {
@@ -11,6 +17,12 @@
     }
     .home-hero-heading-bg {
         @apply absolute top-0 left-0 w-full h-screen -z-[1] opacity-[0.15];
+    }
+    .section{
+        @apply grid h-screen dark:bg-gray-800 dark:text-white;
+    }
+    .max-w-content{
+        @apply max-w-6xl mx-auto;
     }
 }
 @layer utilities {

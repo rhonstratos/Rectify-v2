@@ -374,18 +374,18 @@ const theme = {
 }
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: 'class',
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
     ],
-
     theme: {
         fontSize: theme.fontSize,
         extend: {
             fontFamily: {
-                sans: ['Inter'],
+                sans: ['IBM Plex Sans'],
             },
             colors: {
                 primary: theme.colors.primary,
