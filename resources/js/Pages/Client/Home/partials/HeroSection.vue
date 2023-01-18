@@ -1,46 +1,64 @@
 <template>
+    <!-- container parent -->
     <section id="hero-section" class="
     section
     ">
+        <!-- container child -->
         <div class="
         section-child
+        xl:p-24
+        lg:p-16
+        md:p-8
+        p-4
         bg-gradient-to-tr
-        from-primary-600
-        to-primary-300
+        from-primary-800
+        via-primary-500
+        to-primary-700
+        dark:from-primary-600
+        dark:via-primary-900
+        dark:to-primary-600
         dark:bg-slate-700
         dark:text-white
+        break-normal
         ">
+            <!-- header -->
             <h1 class="
             header-leading
+            max-w-[1600px]
             mx-auto
-            font-semibold tracking-tight break-words
+            font-semibold
+            tracking-tight
             xl:text-6xl
             lg:text-5xl
             md:text-3xl
-            text-xl
-            max-w-[1600px]
+            text-2xl
             ">
                 {{ heading }}
             </h1>
+            <!-- sub header -->
             <div class="
-            mt-2 w-[90%] mx-auto
-            tracking-tight break-words
-            text-slate-200
+            mt-2
+            mx-auto
+            max-w-[1100px]
+            md:w-[90%]
+            w-full
+            tracking-tight
             xl:text-xl
             md:text-lg
             text-base
-            max-w-[1100px]
+            text-slate-200
             dark:text-slate-200
             ">
                 {{ subHeading }}
             </div>
+            <!-- buttons -->
             <div class="
             grid
             mt-5
             ">
                 <div class="
                 md:flex
-                lg:flex-row
+                md:flex-row
                 flex-col
                 grid
                 mx-auto
@@ -48,16 +66,11 @@
                 ">
                     <button class="
                     prime-btn
-                    border
-                    border-solid
-                    bg-primary-700
-                    border-primary-700
+                    invert
+                    hover:invert-0
                     hover:bg-opacity-50
-                    hover:border-transparent
-                    dark:bg-primary-700
-                    dark:border-primary-700
-                    dark:hover:bg-primary-800
-                    dark:hover:border-primary-800
+                    hover:bg-primary-400
+                    bg-primary-700
                     text-white
                     ">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -65,17 +78,12 @@
                     </button>
                     <button class="
                     prime-btn
-                    border
-                    border-solid
                     bg-white
                     text-black
                     dark:bg-gray-600
                     dark:text-white
-                    dark:border-none
                     dark:hover:bg-gray-700
-                    border-primary-700
-                    hover:bg-primary-600
-                    hover:border-primary-600
+                    hover:bg-primary-400
                     hover:text-white
                     ">
                         <i class="fa-solid fa-calendar-check"></i>

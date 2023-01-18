@@ -1,33 +1,44 @@
 <template>
     <section id="section-2" class="
     section
-    xl:h-auto
-    lg:h-auto
     dark:bg-slate-700
+    xl:h-screen
+    lg:h-auto
     ">
         <div class="
         section-child
         dark:text-white
+        break-normal
+        p-0
         ">
-            <div class="text-center w-full p-5">
+            <div class="
+            text-center
+            w-full
+            md:p-4
+            p-2
+            ">
                 <h2 class="
                 font-semibold
                 xl:text-6xl
+                lg:text-5xl
+                md:text-4xl
+                text-3xl
                 ">
-                    Our Services
+                    {{ header }}
                 </h2>
                 <h4 class="
                 xl:text-xl
-                leading-6
+                lg:text-xl
+                md:text-lg
+                text-base
                 ">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repudiandae obcaecati nostrum.
-                    Error iusto, nobis voluptatibus adipisci nemo suscipit delectus non itaque repudiandae, repellat
-                    dolorum illum, saepe totam nam quos?
+                    {{ subHeading }}
                 </h4>
             </div>
             <div class="
             grid
-            gap-5
+            lg:gap-5
+            gap-2
             xl:grid-cols-3
             lg:grid-cols-2
             grid-cols-1 grid-rows-none
@@ -48,6 +59,8 @@ export default {
     },
     data() {
         return {
+            header: 'Our Services',
+            subHeading: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda repudiandae obcaecati nostrum. Error iusto, nobis voluptatibus adipisci nemo suscipit delectus non itaque repudiandae, repellatdolorum illum, saepe totam nam quos?',
             services: [
                 { index: 1, name: 'Lorem ipsum dolor sit amet', description: 'Offers mobile phone repair services with any various issues.' },
                 { index: 2, name: 'Lorem ipsum dolor sit amet', description: 'Offers mobile phone repair services with any various issues.' },

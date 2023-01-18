@@ -8,12 +8,12 @@
         @apply duration-500 ease-in-out;
     }
     * {
-        @apply leading-tight;
+        @apply leading-tight tracking-tight;
     }
 }
 @layer components {
     .prime-btn {
-        @apply rounded-xl xl:text-xl lg:text-xl md:text-lg md:p-3 p-2 transition-colors duration-200 ease-in-out;
+        @apply rounded-xl xl:text-xl lg:text-xl md:text-lg md:p-4 p-3 transition-colors duration-200 ease-in-out;
     }
     .home-hero-heading-bg {
         @apply absolute top-0 left-0 w-full lg:h-screen h-auto -z-[1] opacity-[0.15];
@@ -28,7 +28,7 @@
         @apply max-w-6xl mx-auto;
     }
     .header-leading {
-        @apply xl:leading-[4rem] lg:leading-[3rem] md:leading-7 leading-5;
+        @apply xl:leading-[3.5rem] lg:leading-[3rem] md:leading-7 leading-6;
     }
 }
 @layer utilities {
