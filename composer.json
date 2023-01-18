@@ -2,6 +2,14 @@
     "name": "rhonstratos/rectify-v2",
     "type": "project",
     "description": "Second version of the Rectify Capstone Project.",
+    "authors": [
+        {
+            "name": "Ronald Dy Tioco Jr",
+            "email": "ronald.dytioco.work@gmail.com",
+            "homepage": "https://github.com/rhonstratos",
+            "role": "Developer"
+        }
+    ],
     "keywords": [
         "framework",
         "laravel",
