@@ -6,11 +6,14 @@
     drop-shadow
     transition-all
     duration-300
-    bg-primary-600
-    text-white
-    hover:bg-primary-700
-    hover:text-white
     hover:-translate-y-2
+    text-white
+
+    bg-primary-600
+    hover:bg-primary-700
+
+    dark:bg-primary-800
+    dark:hover:bg-primary-700
     ">
         <i class="fa-home fa-solid"></i>
         <span class="text-lg break-words font-semibold">

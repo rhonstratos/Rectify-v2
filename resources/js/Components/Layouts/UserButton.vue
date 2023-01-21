@@ -11,15 +11,16 @@
     border-2
     border-solid
 
-    border-primary-700
+    dark:bg-primary-700
+    dark:border-primary-700
+    dark:hover:bg-primary-600
+    dark:hover:border-primary-600
+
+    bg-primary-600
+    border-primary-600
+    hover:bg-primary-700
     hover:border-primary-700
-    dark:hover:border-white
-
-    bg-primary-700
-    hover:bg-white
-
     text-white
-    hover:text-primary-700
     ">
         <i class="fa-user fa-solid"></i>
     </li>
@@ -53,15 +54,15 @@
         ">
             <!-- Authenticated Links -->
             <div v-if="$page.props.auth.user" v-for="link in authenticatedLinks">
-                <!-- Logout link -->
-                <Link v-if="link.content == 'Logout'" :class="linkClasses" :href="link.url" method="post" as="submit">
+                <!-- All links -->
+                <Link v-if="link.content != 'Logout'" :class="linkClasses" :href="route(link.url)">
                 <i :class="link.icon" class="w-[26px]"></i>
                 <span :class="linkSpanClasses">
                     {{ link.content }}
                 </span>
                 </Link>
-                <!-- All links -->
-                <Link v-else :class="linkClasses" :href="link.url">
+                <!-- Logout link -->
+                <Link v-else :class="linkClasses" :href="route(link.url)" method="post" as="submit">
                 <i :class="link.icon" class="w-[26px]"></i>
                 <span :class="linkSpanClasses">
                     {{ link.content }}
@@ -71,7 +72,14 @@
             <!-- Unauthenticated Links -->
             <div v-else v-for="link in unauthenticatedLinks">
                 <!-- All links -->
-                <Link :class="linkClasses" :href="link.url">
+                <Link v-if="link.content != 'Login'" :class="linkClasses" :href="route(link.url)">
+                <i :class="link.icon" class="w-[26px]"></i>
+                <span :class="linkSpanClasses">
+                    {{ link.content }}
+                </span>
+                </Link>
+                <!-- Logout link -->
+                <Link v-else :class="linkClasses" :href="route(link.url)">
                 <i :class="link.icon" class="w-[26px]"></i>
                 <span :class="linkSpanClasses">
                     {{ link.content }}
@@ -115,13 +123,13 @@ export default {
             linkSpanClasses: ``,
 
             authenticatedLinks: [
-                { url: '#', content: 'Profile', icon: 'fas fa-user' },
-                { url: '#', content: 'Settings', icon: 'fas fa-gear' },
+                { url: 'home.index', content: 'Profile', icon: 'fas fa-user' },
+                { url: 'profile.edit', content: 'Settings', icon: 'fas fa-gear' },
                 {
                     url: route().has('auth.r_client.logout')
-                        ? route('auth.r_client.logout')
+                        ? 'auth.r_client.logout'
                         : route().has('auth.r_business.logout')
-                            ? route('auth.r_business.logout')
+                            ? 'auth.r_business.logout'
                             : null,
                     content: 'Logout',
                     icon: 'fas fa-arrow-right-from-bracket'
@@ -130,9 +138,9 @@ export default {
             unauthenticatedLinks: [
                 {
                     url: route().has('auth.r_client.login')
-                        ? route('auth.r_client.login')
+                        ? 'auth.r_client.login'
                         : route().has('auth.r_business.login')
-                            ? route('auth.r_business.login')
+                            ? 'auth.r_business.login'
                             : null,
                     content: 'Login',
                     icon: 'fas fa-arrow-right-to-bracket'
