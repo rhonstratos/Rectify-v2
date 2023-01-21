@@ -35,8 +35,6 @@ const request_password_url = route().has('auth.r_client.password.request')
     : (route().has('auth.r_business.password.request')
         ? route('auth.r_business.password.request')
         : null);
-console.log(_url)
-console.log(request_password_url)
 </script>
 
 <template>

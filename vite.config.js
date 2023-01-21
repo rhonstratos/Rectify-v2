@@ -1,9 +1,26 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import fs from 'fs';
+
+// Ignore the protocol on the host, ie do not put "http"
+const host = 'rectify-v2.test';
 const path = require('path')
+const serverConfig = () => {
+    return {
+        host: '0.0.0.0',
+        hmr: {
+            host: host
+        },
+        https: {
+            key: fs.readFileSync('../../etc/ssl/laragon.key'),
+            cert: fs.readFileSync('../../etc/ssl/laragon.crt'),
+        },
+    }
+}
 
 export default defineConfig({
+    server: serverConfig(),
     resolve: {
         alias: {
             '@ast': path.resolve(__dirname, './resources/assets/img')

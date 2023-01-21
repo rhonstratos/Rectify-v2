@@ -2,6 +2,8 @@
     <div class="
     grid place-items-center gap-2
     rounded-lg p-5
+    shadow
+    drop-shadow
     transition-all
     duration-300
     bg-primary-600

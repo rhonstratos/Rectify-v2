@@ -6,6 +6,8 @@
         <!-- container child -->
         <div class="
         section-child
+        drop-shadow-2xl
+        shadow-2xl
         xl:p-24
         lg:p-16
         md:p-8
