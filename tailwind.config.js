@@ -273,12 +273,12 @@ const theme = {
     },
     borderRadius:
     {
-        none: '0',
-        xs: '0.03125rem',
-        sm: '0.04864433407783508rem',
-        default: '0.05342902988195419rem',
-        lg: '0.056618817150592804rem',
-        xl: '0.0625rem',
+        'none': '0',
+        'xs': '0.03125rem',
+        'sm': '0.04864433407783508rem',
+        DEFAULT: '0.05342902988195419rem',
+        'lg': '0.056618817150592804rem',
+        'xl': '0.0625rem',
         '2xl': '0.06259781122207642rem',
         '3xl': '0.0833333358168602rem',
         '4xl': '0.09728866815567017rem',
@@ -369,7 +369,7 @@ const theme = {
         '89xl': '5.315770626068115rem',
         '90xl': '5.633129596710205rem',
         '91xl': '6rem',
-        full: '9999px'
+        'full': '9999px'
     }
 }
 /** @type {import('tailwindcss').Config} */
@@ -382,8 +382,8 @@ module.exports = {
         './resources/js/**/*.vue',
     ],
     theme: {
-        fontSize: theme.fontSize,
         extend: {
+            fontSize: theme.fontSize,
             fontFamily: {
                 sans: ['IBM Plex Sans'],
             },

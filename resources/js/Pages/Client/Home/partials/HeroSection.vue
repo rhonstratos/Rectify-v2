@@ -6,8 +6,10 @@
         <!-- container child -->
         <div class="
         section-child
-        xl:p-24
-        lg:p-16
+        drop-shadow-2xl
+        shadow-2xl
+        xl:p-14
+        lg:p-12
         md:p-8
         p-4
         bg-gradient-to-tr
@@ -37,7 +39,7 @@
             </h1>
             <!-- sub header -->
             <div class="
-            mt-2
+            mt-5
             mx-auto
             max-w-[1100px]
             md:w-[90%]
@@ -54,7 +56,7 @@
             <!-- buttons -->
             <div class="
             grid
-            mt-5
+            mt-10
             ">
                 <div class="
                 md:flex
@@ -67,9 +69,7 @@
                     <button class="
                     prime-btn
                     invert
-                    hover:invert-0
-                    hover:bg-opacity-50
-                    hover:bg-primary-400
+                    hover:bg-primary-900
                     bg-primary-700
                     text-white
                     ">
@@ -80,7 +80,7 @@
                     prime-btn
                     bg-white
                     text-black
-                    dark:bg-gray-600
+                    dark:bg-gray-800
                     dark:text-white
                     dark:hover:bg-gray-700
                     hover:bg-primary-400

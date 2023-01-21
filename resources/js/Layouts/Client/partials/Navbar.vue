@@ -6,12 +6,16 @@
     md:py-3
     p-2
     bg-white
+    dark:bg-slate-700
     drop-shadow-md
+    shadow
     w-full
     relative
     z-auto
     ">
-        <div class="self-center">
+        <div class="
+        self-center
+        ">
             <div class="
             flex
             flex-wrap
@@ -20,6 +24,7 @@
             p-1
             z-[-1]
             ">
+                <!-- site logo -->
                 <div class="
                 flex
                 flex-shrink-0
@@ -34,10 +39,21 @@
                         <img src="@ast/rectify-dark-blue.png" alt="image">
                     </div>
                 </div>
-                <div v-if="trueLinks.length > 0" class="
+
+                <!-- nav items -->
+                <ul class="
+                flex
+                flex-shrink-0
+                items-center
+                ">
+                    <!-- nav items (mobile) -->
+                    <NavItems :trueLinks="trueLinks" :drawerShow="drawerShow" class="lg:flex hidden" />
+
+                    <!-- nav items dropdown btn -->
+                    <li v-if="trueLinks.length > 0" class="
                 lg:hidden flex flex-wrap items-center
                 ">
-                    <button @click="drawerShow = !drawerShow" type="button" class="
+                        <button @click="drawerShow = !drawerShow" type="button" class="
                         transition-all flex items-center
                         px-3 py-2
                         border border-white
@@ -45,25 +61,32 @@
                         text-black
                         hover:text-primary-400
                         hover:border-primary-400">
-                        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <title>Menu</title>
-                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-                        </svg>
-                    </button>
-                </div>
-                <NavItems :trueLinks="trueLinks" :drawerShow="drawerShow" class="lg:flex hidden" />
+                            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <title>Menu</title>
+                                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                            </svg>
+                        </button>
+                    </li>
+
+                    <!-- user profile -->
+                    <UserButton />
+                </ul>
             </div>
         </div>
     </nav>
-    <NavItems :trueLinks="trueLinks" :drawerShow="drawerShow" class="lg:hidden grid" />
+    <!-- nav items (mobile) -->
+    <ul>
+        <NavItems :trueLinks="trueLinks" :drawerShow="drawerShow" class="lg:hidden grid" />
+    </ul>
 </template>
 <!-- https://github.com/tighten/ziggy#the-router-class -->
 <script>
 import NavItems from '@/Components/Layouts/NavItems.vue'
+import UserButton from '@/Components/Layouts/UserButton.vue'
 export default {
     name: 'Navbar',
     components: {
-        NavItems
+        NavItems, UserButton
     },
     data() {
         return {
@@ -74,7 +97,6 @@ export default {
                 { url: 'home.create', content: 'Orders' },
                 { url: 'home.create', content: 'Appointments' },
                 { url: 'home.create', content: 'Messages' },
-                { url: 'dashboard', content: 'Dashboard' },
             ]
         }
     },

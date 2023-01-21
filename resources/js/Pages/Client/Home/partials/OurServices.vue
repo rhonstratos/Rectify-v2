@@ -1,7 +1,7 @@
 <template>
     <section id="section-2" class="
     section
-    dark:bg-slate-700
+    dark:bg-slate-900
     xl:h-screen
     lg:h-auto
     ">
