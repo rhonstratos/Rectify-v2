@@ -69,11 +69,12 @@ export default {
         return {
             drawerShow: false,
             links: [
-                { url: 'r_client.home.index', content: 'Home' },
-                { url: 'r_client.home.create', content: 'Products' },
-                { url: 'r_client.home.create', content: 'Orders' },
-                { url: 'r_client.home.create', content: 'Appointments' },
-                { url: 'r_client.home.create', content: 'Messages' },
+                { url: 'home.index', content: 'Home' },
+                { url: 'home.create', content: 'Products' },
+                { url: 'home.create', content: 'Orders' },
+                { url: 'home.create', content: 'Appointments' },
+                { url: 'home.create', content: 'Messages' },
+                { url: 'dashboard', content: 'Dashboard' },
             ]
         }
     },
