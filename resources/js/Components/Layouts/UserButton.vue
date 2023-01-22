@@ -62,6 +62,19 @@
                     {{ link.content }}
                 </span>
                 </Link>
+                <!-- Edit Profile link -->
+                <Link
+                    v-else-if="user && link.content == 'Profile' && link.content != 'Logout' && link.content != 'Admin'"
+                    :class="linkClasses" :href="route(
+                        user.type == userTypes['BUSINESS']
+                            ? 'r_business.profile.edit'
+                            : link.url
+                    )">
+                <i :class="link.icon" class="w-[26px]"></i>
+                <span :class="linkSpanClasses">
+                    {{ link.content }}
+                </span>
+                </Link>
                 <!-- All links -->
                 <Link v-else-if="link.content != 'Logout' && link.content != 'Admin'" :class="linkClasses"
                     :href="route(link.url)">
@@ -138,7 +151,7 @@ export default {
             authenticatedLinks: [
                 { url: 'r_business.dashboard.index', content: 'Admin', icon: 'fas fa-user-shield' },
                 { url: 'home.index', content: 'Profile', icon: 'fas fa-user' },
-                { url: 'profile.edit', content: 'Settings', icon: 'fas fa-gear' },
+                { url: 'r_client.profile.edit', content: 'Settings', icon: 'fas fa-gear' },
                 { url: 'logout', content: 'Logout', icon: 'fas fa-arrow-right-from-bracket' }
             ],
             unauthenticatedLinks: [

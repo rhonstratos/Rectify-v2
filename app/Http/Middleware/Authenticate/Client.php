@@ -17,7 +17,7 @@ class Client extends Middleware
     protected function redirectTo($request)
     {
         if (!$request->expectsJson()) {
-            return route('auth.r_client.login');
+            return route('login');
         }
     }
     public function handle($request, Closure $next, ...$guards)
@@ -28,7 +28,7 @@ class Client extends Middleware
 
         if ($user->type == $user::TYPES['BUSINESS']) {
             Auth::logout();
-            return redirect()->route('auth.r_business.login');
+            return redirect()->route('login');
         }
 
         return $next($request);
