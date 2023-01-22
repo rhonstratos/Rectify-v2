@@ -43,11 +43,11 @@ class AuthenticatedSessionController extends Controller
         if ($user->type == $types['CLIENT']) {
             return redirect()->route('home.index');
         }
-        if ($user->type == $types['BUSINESS']) {
-            return redirect()->url('/dashboard');
+        else if ($user->type == $types['BUSINESS']) {
+            return redirect()->route('r_business.dashboard.index');
         }
-        if ($user->type == $types['ADMIN']) {
-            return redirect()->url('/dashboard');
+        else if ($user->type == $types['ADMIN']) {
+            return redirect()->route('r_business.dashboard.index');
         }
 
         return $this->destroy($request);

@@ -10,7 +10,7 @@
 
 <script>
 import ToggleDark from '@/Components/ToggleDark.vue';
-import Navbar from '@/Layouts/Client/partials/Navbar.vue'
+import Navbar from '@/Layouts/Client/Main/partials/Navbar.vue'
 
 export default {
     name: 'Main',

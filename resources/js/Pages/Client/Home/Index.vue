@@ -11,7 +11,7 @@
 
 <script >
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-import ClientLayout from '@/Layouts/Client/Main.vue';
+import ClientLayout from '@/Layouts/Client/Main/Index.vue';
 import HeroSection from '@/Pages/Client/Home/partials/HeroSection.vue';
 import OurServices from '@/Pages/Client/Home/partials/OurServices.vue';
 export default {

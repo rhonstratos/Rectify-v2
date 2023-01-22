@@ -17,9 +17,9 @@ Route::resource('home', Base\HomeController::class);
 //     ]);
 // });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', ])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', ])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [Base\ProfileController::class, 'edit'])->name('profile.edit');

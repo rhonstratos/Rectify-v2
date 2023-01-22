@@ -1,6 +1,6 @@
 <script setup>
 // import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import ClientLayout from '@/Layouts/Client/Main.vue'
+import ClientLayout from '@/Layouts/Client/Main/Index.vue'
 import DeleteUserForm from './Partials/DeleteUserForm.vue';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';

@@ -8,7 +8,18 @@
         @apply duration-500 ease-in-out;
     }
     * {
-        @apply leading-tight tracking-tight;
+        @apply
+        leading-tight
+        tracking-tight
+        focus:ring-primary-600
+        focus:outline-none
+        focus:outline-primary-600
+        active:ring-primary-600
+        active:outline-primary-600
+        active:border-primary-600
+        focus:border-primary-600
+        focus:ring-2
+        focus:ring-offset-2;
     }
 }
 @layer components {
