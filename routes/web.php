@@ -6,7 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [Client\HomeController::class, 'index']);
+Route::get('/', [Client\HomeController::class, 'index'])->name('main.index');
 Route::resource('home', Base\HomeController::class);
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
