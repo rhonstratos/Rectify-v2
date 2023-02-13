@@ -15,7 +15,7 @@
                 md:text-lg
                 text-lg
                 ">
-                    Charts
+                    Orders
                 </h2>
 
                 <div class="
@@ -40,6 +40,6 @@
 
 <script>
 export default {
-    name: 'Charts'
+    name: 'Orders'
 }
 </script>

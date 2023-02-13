@@ -15,7 +15,7 @@
                 md:text-lg
                 text-lg
                 ">
-                    Charts
+                    Appointments
                 </h2>
 
                 <div class="
@@ -40,6 +40,6 @@
 
 <script>
 export default {
-    name: 'Charts'
+    name: 'Appointments'
 }
 </script>

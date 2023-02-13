@@ -15,7 +15,7 @@
                 md:text-lg
                 text-lg
                 ">
-                    Charts
+                    Alerts
                 </h2>
 
                 <div class="
@@ -26,7 +26,7 @@
                     grid
                     items-center
                     place-content-center
-                    bg-primary-800
+                    bg-error-600
                     w-full h-[20rem]
                     rounded
                     ">
@@ -40,6 +40,6 @@
 
 <script>
 export default {
-    name: 'Charts'
+    name: 'Alerts'
 }
 </script>
