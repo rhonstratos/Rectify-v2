@@ -76,19 +76,20 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                         Browse Items
                     </button>
-                    <button class="
-                    prime-btn
-                    bg-white
-                    text-black
-                    dark:bg-gray-800
-                    dark:text-white
-                    dark:hover:bg-gray-700
-                    hover:bg-primary-400
-                    hover:text-white
-                    ">
-                        <i class="fa-solid fa-calendar-check"></i>
-                        Request Appointment
-                    </button>
+                    <Link class="
+                        prime-btn
+                        cursor-pointer
+                        bg-white
+                        text-black
+                        dark:bg-gray-800
+                        dark:text-white
+                        dark:hover:bg-gray-700
+                        hover:bg-primary-400
+                        hover:text-white
+                        " :href="route('r_client.appointments.index')">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Request Appointment
+                    </Link>
                 </div>
             </div>
         </div>
@@ -96,8 +97,12 @@
 </template>
 
 <script>
+import { Link } from '@inertiajs/inertia-vue3';
 export default {
     name: 'HeroSection',
+    components: {
+        Link
+    },
     data() {
         return {
             heading: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',

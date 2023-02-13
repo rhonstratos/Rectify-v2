@@ -7,6 +7,8 @@ Route::middleware(['auth.client'])->group(function () {
     Route::get('/profile', [Base\ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [Base\ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [Base\ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::resource('appointments', Base\AppointmentsController::class);
 });
 
 Route::middleware(['guest'])->group(function () {
