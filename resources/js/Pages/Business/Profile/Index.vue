@@ -1,9 +1,9 @@
 <script setup>
-// import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import ClientLayout from '@/Layouts/Client/Main/Index.vue'
-import DeleteUserForm from './Partials/DeleteUserForm.vue';
-import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
-import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+// import ClientLayout from '@/Layouts/Client/Main/Index.vue'
+import DeleteUserForm from '@/Components/Profile/DeleteUserForm.vue';
+import UpdatePasswordForm from '@/Components/Profile/UpdatePasswordForm.vue';
+import UpdateProfileInformationForm from '@/Components/Profile/UpdateProfileInformationForm.vue';
 import { Head } from '@inertiajs/inertia-vue3';
 
 defineProps({
@@ -15,8 +15,7 @@ defineProps({
 <template>
 
     <Head title="Account Settings" />
-
-    <ClientLayout>
+    <AuthenticatedLayout>
         <template #header>
             <h2 class="
             font-semibold
@@ -74,5 +73,5 @@ defineProps({
                 </div>
             </div>
         </div>
-    </ClientLayout>
+    </AuthenticatedLayout>
 </template>

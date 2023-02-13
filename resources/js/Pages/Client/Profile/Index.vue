@@ -1,9 +1,9 @@
 <script setup>
 // import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import ClientLayout from '@/Layouts/Client/Main/Index.vue'
-import DeleteUserForm from './Partials/DeleteUserForm.vue';
-import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
-import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
+import DeleteUserForm from '@/Components/Profile/DeleteUserForm.vue';
+import UpdatePasswordForm from '@/Components/Profile/UpdatePasswordForm.vue';
+import UpdateProfileInformationForm from '@/Components/Profile/UpdateProfileInformationForm.vue';
 import { Head } from '@inertiajs/inertia-vue3';
 
 defineProps({

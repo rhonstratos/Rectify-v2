@@ -5,9 +5,16 @@ import Dropdown from '@/Components/Dropdown.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
+import ToggleDark from '@/Components/ToggleDark.vue';
 import { Link } from '@inertiajs/inertia-vue3';
 
 const showingNavigationDropdown = ref(false);
+const navLinks = [
+    { url: 'r_business.profile.edit', content: 'Profile' },
+];
+const logout = {
+    url: 'logout', content: 'Logout',
+};
 </script>
 
 <template>
@@ -20,14 +27,15 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
-                                    <ApplicationLogo class="block h-9 w-auto fill-current text-gray-800" />
+                                <Link :href="route('main.index')">
+                                <ApplicationLogo class="block h-9 w-auto fill-current text-gray-800" />
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                <NavLink :href="route('r_business.dashboard.index')"
+                                    :active="route().current('r_business.dashboard.index')">
                                     Dashboard
                                 </NavLink>
                             </div>
@@ -54,15 +62,11 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
-                                        <DropdownLink :href="
-                                            route().has('auth.r_client.logout')
-                                                ? route('auth.r_client.logout')
-                                                : route().has('auth.r_business.logout')
-                                                    ? route('auth.r_business.logout')
-                                                    : null
-                                        " method="post" as="button">
-                                            Log Out
+                                        <DropdownLink v-for="link in navLinks" :href="route(link.url)">
+                                            {{ link.content }}
+                                        </DropdownLink>
+                                        <DropdownLink :href="route(logout.url)" method="post" as="button">
+                                            {{ logout.content }}
                                         </DropdownLink>
                                     </template>
                                 </Dropdown>
@@ -94,7 +98,8 @@ const showingNavigationDropdown = ref(false);
                 <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
                     class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                        <ResponsiveNavLink :href="route('r_business.dashboard.index')"
+                            :active="route().current('r_business.dashboard.index')">
                             Dashboard
                         </ResponsiveNavLink>
                     </div>
@@ -109,15 +114,11 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
-                            <ResponsiveNavLink :href="
-                                route().has('auth.r_client.logout')
-                                    ? route('auth.r_client.logout')
-                                    : route().has('auth.r_business.logout')
-                                        ? route('auth.r_business.logout')
-                                        : null
-                            " method="post" as="button">
-                                Log Out
+                            <ResponsiveNavLink v-for="link in navLinks" :href="route(link.url)">
+                                {{ link.content }}
+                            </ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route(logout.url)" method="post" as="button">
+                                {{ logout.content }}
                             </ResponsiveNavLink>
                         </div>
                     </div>
@@ -137,4 +138,5 @@ const showingNavigationDropdown = ref(false);
             </main>
         </div>
     </div>
+    <ToggleDark />
 </template>

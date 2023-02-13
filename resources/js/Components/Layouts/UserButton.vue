@@ -53,16 +53,39 @@
         gap-2
         ">
             <!-- Authenticated Links -->
-            <div v-if="$page.props.auth.user" v-for="link in authenticatedLinks">
+            <div v-if="user" v-for="link in authenticatedLinks">
+                <!-- Admin link -->
+                <Link v-if="user.type == userTypes['BUSINESS']
+                && link.content == 'Admin'" :class="linkClasses" :href="route(link.url)">
+                <i :class="link.icon" class="w-[26px]"></i>
+                <span :class="linkSpanClasses">
+                    {{ link.content }}
+                </span>
+                </Link>
+                <!-- Edit Profile link -->
+                <Link
+                    v-else-if="user && link.content == 'Profile' && link.content != 'Logout' && link.content != 'Admin'"
+                    :class="linkClasses" :href="route(
+                        user.type == userTypes['BUSINESS']
+                            ? 'r_business.profile.edit'
+                            : link.url
+                    )">
+                <i :class="link.icon" class="w-[26px]"></i>
+                <span :class="linkSpanClasses">
+                    {{ link.content }}
+                </span>
+                </Link>
                 <!-- All links -->
-                <Link v-if="link.content != 'Logout'" :class="linkClasses" :href="route(link.url)">
+                <Link v-else-if="link.content != 'Logout' && link.content != 'Admin'" :class="linkClasses"
+                    :href="route(link.url)">
                 <i :class="link.icon" class="w-[26px]"></i>
                 <span :class="linkSpanClasses">
                     {{ link.content }}
                 </span>
                 </Link>
                 <!-- Logout link -->
-                <Link v-else :class="linkClasses" :href="route(link.url)" method="post" as="submit">
+                <Link v-else-if="link.content != 'Admin'" :class="linkClasses" :href="route(link.url)" method="post"
+                    as="submit">
                 <i :class="link.icon" class="w-[26px]"></i>
                 <span :class="linkSpanClasses">
                     {{ link.content }}
@@ -101,6 +124,9 @@ export default {
         user() {
             return this.$page.props.auth.user
         },
+        userTypes() {
+            return this.$page.props.userTypes
+        },
     },
     data() {
         return {
@@ -123,28 +149,13 @@ export default {
             linkSpanClasses: ``,
 
             authenticatedLinks: [
+                { url: 'r_business.dashboard.index', content: 'Admin', icon: 'fas fa-user-shield' },
                 { url: 'home.index', content: 'Profile', icon: 'fas fa-user' },
-                { url: 'profile.edit', content: 'Settings', icon: 'fas fa-gear' },
-                {
-                    url: route().has('auth.r_client.logout')
-                        ? 'auth.r_client.logout'
-                        : route().has('auth.r_business.logout')
-                            ? 'auth.r_business.logout'
-                            : null,
-                    content: 'Logout',
-                    icon: 'fas fa-arrow-right-from-bracket'
-                }
+                { url: 'r_client.profile.edit', content: 'Settings', icon: 'fas fa-gear' },
+                { url: 'logout', content: 'Logout', icon: 'fas fa-arrow-right-from-bracket' }
             ],
             unauthenticatedLinks: [
-                {
-                    url: route().has('auth.r_client.login')
-                        ? 'auth.r_client.login'
-                        : route().has('auth.r_business.login')
-                            ? 'auth.r_business.login'
-                            : null,
-                    content: 'Login',
-                    icon: 'fas fa-arrow-right-to-bracket'
-                },
+                { url: 'login', content: 'Login', icon: 'fas fa-arrow-right-to-bracket' },
             ],
         }
     },

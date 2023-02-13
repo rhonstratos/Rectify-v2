@@ -92,10 +92,10 @@ export default {
         return {
             drawerShow: false,
             links: [
-                { url: 'home.index', content: 'Home' },
+                { url: 'main.index', content: 'Home' },
                 { url: 'home.create', content: 'Products' },
                 { url: 'home.create', content: 'Orders' },
-                { url: 'home.create', content: 'Appointments' },
+                { url: 'r_client.appointments.index', content: 'Appointments' },
                 { url: 'home.create', content: 'Messages' },
             ]
         }
